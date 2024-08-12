@@ -81,3 +81,9 @@ SELECT *
 FROM members
 ORDER BY Address, MemberSince
 LIMIT 10;
+
+11. A mailing list of an illegal online service was sent to the SQLPD hot-line. Please submit the top 10 entries join dates and email addresses' details when sorted by join dates in ascending order and then by email addresses in descending order. Please make sure there are no duplicates.
+SELECT DISTINCT Joined, EmailAddress
+FROM mailing_list
+ORDER BY Joined, EmailAddress DESC
+LIMIT 10;
