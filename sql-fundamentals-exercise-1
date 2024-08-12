@@ -1,3 +1,4 @@
+EXERCISE 1
 1. List all the Canadian cities and their populations
 SELECT * FROM north_american_cities 
 WHERE country = "Canada";
@@ -21,3 +22,15 @@ ORDER BY population DESC LIMIT 2;
 SELECT * FROM north_american_cities 
 WHERE country = "United States" 
 ORDER BY population DESC LIMIT 2 OFFSET 2;
+
+
+EXERCISE 2
+1. Find the number of movies each director has directed
+SELECT DISTINCT Director, COUNT(*) FROM Movies GROUP BY DIRECTOR;
+
+2. Find the total domestic and international sales that can be attributed to each director
+SELECT DISTINCT a.Director, SUM(b.Domestic_sales)+SUM(b.International_sales) AS International
+FROM Movies a
+LEFT JOIN Boxoffice b
+ON a.Id = b.Movie_id
+GROUP BY Director;
