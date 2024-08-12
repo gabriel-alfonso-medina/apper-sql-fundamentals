@@ -34,3 +34,50 @@ FROM Movies a
 LEFT JOIN Boxoffice b
 ON a.Id = b.Movie_id
 GROUP BY Director;
+
+SQL Police Department
+1. An illegal site's servers were seized in a recent operation. Please submit all users' details
+SELECT *
+FROM users;
+
+2. A mailing list of an illegal online service was sent to the SQLPD hot-line. Please submit all entries' details.
+SELECT *
+FROM mailing_list;
+
+3. An illegal site's servers were seized in a recent operation. Please submit all users email addresses, surnames, and number of downloads' details.
+SELECT EmailAddress, Surname, Downloads
+FROM users;
+
+4. An illegal site's servers were seized in a recent operation. Please submit all users access times and emails' details.
+SELECT AccessTime, Email
+FROM users;
+
+5. An illegal site's servers were seized in a recent operation. Please submit all users given names' details. please make sure there are no duplicates.
+SELECT DISTINCT GivenName
+FROM users;
+
+6. A mailing list of an illegal online service was sent to the SQLPD hot-line. Please submit all entries' details sorted by number of children in ascending order
+SELECT *
+FROM mailing_list
+ORDER BY children;
+
+7. A mailing list of an illegal online services was sent to the SQLPD hot-line. Please submit all entries' details sorted by number of kids in descending order.
+SELECT *
+FROM mailing_list
+ORDER BY NumberOfKids DESC;
+
+8. A mailing list of an illegal online service was sent to the SQLPD hot-line. Please submit all entries number of kids and emails' details sorted by emails in descending order. Please make sure there are no duplicates.
+SELECT DISTINCT NumberOfKids, Email
+FROM mailing_list
+ORDER BY Email DESC;
+
+9. A mailing list of an illegal online service was sent to SQLPD hot-line. Please submit all entries first names, emails and number of password changes' details sorted by number of password changes in ascending order and then by emails in ascending order.
+SELECT FirstName, Email, PasswordChanges
+FROM mailing_list
+GROUP BY PasswordChanges, Email;
+
+10. White hat hacker has send SQLPD exposed members' details of a shady site connected to various persons of interest. Please submit the top 10 members' details when sorted by addresses in ascending order and then by member since dates in ascending order.
+SELECT *
+FROM members
+ORDER BY Address, MemberSince
+LIMIT 10;
